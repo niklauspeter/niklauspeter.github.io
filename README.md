@@ -1,19 +1,52 @@
-# Klaus Orioki Website
-#### The application is a website intended solely as an introduction to web development using html. It is to the best of my knowledge that no other versions of the same have been previously made.
-#### By **niklauspeter**
-## Description
-The application is a website intended solely as an introduction to web development using HTML.
-## Setup/Installation Requirements
-* set the webs URL https://github.com/niklauspeter/niklauspeter.github.io in your browsers or current search engine.
-* once the website is up navigate freely
+# Klaus Orioki — Portfolio
 
-The code doesn't currently need a database nor does it depend on any application to run.
-## Known Bugs
-The system currenly doesn't experience any known bugs.
-## Technologies Used
-HTML is the primary coding language used in the creation of this website.
-## Support and contact details
-For any enquiries contact our help desk at :073578293.
-### License
-*Determine the license under which this application can be used.  See below for more details on licensing.*
-Copyright (c) 2019 **moringa school**
+Personal portfolio of Klaus Orioki, full-stack software developer based in Nairobi, Kenya.
+A static site (HTML, CSS and JavaScript) with no build step, ready for GitHub Pages.
+
+## Structure
+
+```
+index.html              Page markup (includes the small inline icon set)
+css/styles.css          All styles
+js/main.js              All interactions
+assets/
+  profile.webp          Hero photo
+  logos/                Tech stack logos (from devicon v2.17.0)
+  projects/             Project screenshots (800×500 .webp)
+```
+
+## Run locally
+
+Open `index.html` in a browser. Or, to test it the way GitHub Pages serves it:
+
+```bash
+python3 -m http.server 8000
+# then visit http://localhost:8000
+```
+
+## Deploy to GitHub Pages
+
+1. Push these files to the root of a repository.
+2. In the repository, go to **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then **Save**.
+
+## Common edits
+
+| To change… | Edit |
+|---|---|
+| Text, links, projects | `index.html` |
+| Add a project | Copy an `<article class="featured-card">` in `index.html`; set `data-category` (`websites` or `web-apps`) and `data-industry` (`ecommerce`, `tours`, `portfolio`, `wellness`, `finance`, `trucking`). Add its screenshot to `assets/projects/`. Counts and numbering update automatically. |
+| Add a web-app video | Copy a video card and set `data-video` to the YouTube video ID. |
+| Hero stats | `data-count` values in the hero section of `index.html` |
+| Colours, spacing, fonts | `css/styles.css` (colour tokens are at the top) |
+| Particle background | The `PARTICLES` settings block in `js/main.js` |
+| Service pop-up text | The `<template id="service-…">` blocks in `index.html` |
+
+## After changing CSS or JS
+
+Browsers keep old copies of `styles.css` and `main.js` for a while. When you edit either file, bump the version at the end of its link in `index.html` (e.g. `styles.css?v=2026-09-30b` → `?v=2026-10-01`), so visitors get the new file straight away.
+
+## Contact form
+
+The form posts to [FormSubmit](https://formsubmit.co) at `oriokiklaus@gmail.com`.
+The first submission after going live triggers an activation email from FormSubmit. Confirm it once, and messages will arrive from then on.
